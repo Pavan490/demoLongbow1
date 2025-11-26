@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Welcome</title>
+    <!-- Keep styles simple & inline-friendly for email clients -->
+    <style>
+        /* Many email clients strip external CSS—inline or minimal embedded is safest */
+        .container { max-width: 640px; margin: 0 auto; background:#ffffff; }
+        .btn { display:inline-block; padding:12px 18px; text-decoration:none; }
+        @media (max-width:600px) { .p-24 { padding:16px !important; } }
+    </style>
+</head>
+<body style="margin:0;background:#f6f7fb;font-family:Arial,Helvetica,sans-serif;color:#111;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f6f7fb;padding:24px 0;">
+    <tr>
+        <td align="center">
+            <table class="container" role="presentation" cellpadding="0" cellspacing="0" width="100%" style="border-radius:12px;overflow:hidden;">
+                <tr>
+                    <td style="background:#0f172a;color:#fff;padding:24px;text-align:center;">
+                        <!-- Using CID image (optional) -->
+                        <img src="cid:logo" alt="Logo" width="48" height="48" style="vertical-align:middle;border:none;" />
+                        <div style="font-size:20px;font-weight:700;margin-top:8px;">Welcome, <span th:text="${name}">User</span>!</div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="p-24" style="padding:24px;background:#ffffff;">
+                        <p style="margin:0 0 12px;">Hi <span th:text="${name}">User</span>,</p>
+                        <p style="margin:0 0 12px;">
+                            Thanks for signing up. Please verify your email to get started.
+                        </p>
+
+                        <p style="margin:24px 0;">
+                            <a th:href="${verifyUrl}" class="btn" style="background:#2563eb;color:#fff;border-radius:8px;"
+                            >Verify Email</a>
+                        </p>
+
+                        <p style="margin:0 0 12px;font-size:13px;color:#444;">
+                            If the button doesn’t work, copy and paste this link into your browser:
+                        </p>
+                        <p style="word-break:break-all;font-size:12px;margin:0 0 12px;" th:text="${verifyUrl}">
+                            https://yourapp/verify?token=...
+                        </p>
+
+                        <hr style="border:none;border-top:1px solid #eee;margin:24px 0;" />
+                        <p style="font-size:12px;color:#666;margin:0;">
+                            Need help? Reply to this email.
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="background:#f8fafc;color:#64748b;padding:16px;text-align:center;font-size:12px;">
+                        © <span th:text="${year}">2025</span> Your Company. All rights reserved.
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
