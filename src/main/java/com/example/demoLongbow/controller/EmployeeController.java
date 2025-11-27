@@ -119,7 +119,7 @@ public class EmployeeController {
     }
     @GetMapping("/demo")
      public ResponseEntity<String> getDemo() {
-     return ResponseEntity.status(HttpStatus.OK).body("Longbow Technologies Successfully!");
+     return ResponseEntity.status(HttpStatus.OK).body("Longbow Technologies Successfully !");
  }
 
 }
