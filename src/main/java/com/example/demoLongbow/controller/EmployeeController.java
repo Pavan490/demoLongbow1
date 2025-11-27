@@ -117,6 +117,9 @@ public class EmployeeController {
         res.put("message","Password is Updated Successfully");
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
-
+    @GetMapping("/demo")
+     public ResponseEntity<String> getDemo() {
+     return ResponseEntity.status(HttpStatus.OK).body("Longbow Technologies Successfully!");
+ }
 
 }
