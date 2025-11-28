@@ -122,4 +122,10 @@ public class EmployeeController {
      return ResponseEntity.status(HttpStatus.OK).body("Longbow Technologies Successfully  helo");
  }
 
+    @GetMapping("/sample")
+    public ResponseEntity<String> getSample() {
+        return ResponseEntity.status(HttpStatus.OK).body("Sample Code!!!!");
+    }
+
+
 }
